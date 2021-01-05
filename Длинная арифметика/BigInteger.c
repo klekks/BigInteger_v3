@@ -304,7 +304,7 @@ BigInteger divBigInteger(BigInteger* A, BigInteger* B) {
 	return DIV;
 }
 
-void toStrBigInteger(char s[1001], BigInteger N) {
+void toStrBigInteger(char* s, BigInteger N) {
 	BigInteger ZERO, DIV, _100;
 	char str_[1001];
 	char* str = str_;

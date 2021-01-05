@@ -7,7 +7,7 @@
 
 typedef struct {
 	byte value[BIS + 1]; // указатель на массив данных
-	unsigned byte sign; // знак числа (вместо вычисления знакового бита)
+	byte sign; // знак числа (вместо вычисления знакового бита)
 } BigInteger;
 
 void initBigInteger(BigInteger*, char);
@@ -26,7 +26,7 @@ int cmpBigInteger(BigInteger*, BigInteger*);
 void fromStrBigInteger(char*, BigInteger*);
 unsigned startBigInteger(BigInteger*);
 BigInteger divBigInteger(BigInteger*, BigInteger*);
-void toStrBigInteger(char [1001], BigInteger);
+void toStrBigInteger(char*, BigInteger);
 void powBigInteger(BigInteger*, BigInteger*);
 void sumFromToBigInteger(BigInteger*, BigInteger*);
 BigInteger factorialBigInteger(BigInteger);

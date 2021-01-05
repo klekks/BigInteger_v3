@@ -1,4 +1,6 @@
 #include "parser.h"
+#include <stdio.h>
+#include <locale.h>
 
 void getNumber(char* str, int len, BigInteger* N) {
 	char buffer[1001];
@@ -109,11 +111,6 @@ char makeOperation(char* input, BigInteger* result) {
 	*result = A;
 	return 1;
 }
-
-#include <stdio.h>
-#include <locale.h>
-
-
 
 void parserInit() {
 	char* locale = setlocale(LC_ALL, "");
