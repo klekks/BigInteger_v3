@@ -10,7 +10,7 @@ int main() {
 	parserInit();
 	while (1) {
 		printf(">>> ");
-		gets_s(b, 1000);
+		gets(b);
 		if (makeOperation(b, &A)) {
 			toStrBigInteger(a, A);
 			printf("    = %s\n", a);
