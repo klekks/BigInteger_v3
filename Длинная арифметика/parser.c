@@ -118,7 +118,7 @@ char makeOperation(char* input, BigInteger* result) {
 }
 
 void parserInit() {
-	char* locale = setlocale(LC_ALL, "");
+	char* locale = setlocale(LC_ALL, "ru_UA.UTF-8");
 	printf("\tWelcom to BigInteger Calculator Lite v3.1\n");
 	printf("\t\t for Lab №2 Методы программирования, SPBSTU 2021\n");
 	printf("\t\t by Петров И. и Васильев П.\n\n");
