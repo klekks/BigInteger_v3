@@ -1,6 +1,11 @@
 #include "parser.h"
+#include "BigInteger.h"
 #include <stdio.h>
 #include <locale.h>
+
+char all_symbols[] = "0123456789+-*/%^!~";
+char all_operators[] = "+-*/%^!~";
+char all_digits[] = "0123456789";
 
 void getNumber(char* str, int len, BigInteger* N) {
 	char buffer[1001];
@@ -22,14 +27,14 @@ char in(char s, char* str) {
 }
 
 char getOperator(char* str) {
-	while (!in(*str, "0123456789") && *str) if (in(*str, "+-*/%!^~")) return *str;
+	while (!in(*str, all_digits) && *str) if (in(*str, all_operators)) return *str;
 	return 0;
 }
 
 void clearSpaces(char* str) {
 	char* pointer = str;
 	while (*str) {
-		if (in(*str, "0123456789+-*/^!%~")) {
+		if (in(*str, all_symbols)) {
 			*pointer = *str;
 			pointer++;
 			str++;
@@ -42,19 +47,19 @@ void clearSpaces(char* str) {
 char makeOperation(char* input, BigInteger* result) {
 	clearSpaces(input);
 	BigInteger A, B;
-	char operator;
+	char operator_;
 	int length1, length2;
 	length1 = _lenInputBigInteger(input);
 	getNumber(input, length1, &A);
 	input += length1;
-	operator = getOperator(input);
-	if (!operator) {
+	operator_ = getOperator(input);
+	if (!operator_) {
 		printf("\t InputError\n \t Operator not found\n");
 		return 0;
 	}
 
 	//бинарный оператор, второе число необходимо
-	if (!(operator == '!')) {
+	if (!(operator_ == '!')) {
 		input++;
 		length2 = _lenInputBigInteger(input);
 		getNumber(input, length2, &B);
@@ -63,7 +68,7 @@ char makeOperation(char* input, BigInteger* result) {
 	BigInteger ZERO;
 	initBigInteger(&ZERO, 0);
 
-	switch (operator) {
+	switch (operator_) {
 	case '+':
 		addBigInteger(&A, &B);
 		break;

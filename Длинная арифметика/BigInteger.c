@@ -1,4 +1,3 @@
-#pragma once
 #include "BigInteger.h"
 
 // default init by char

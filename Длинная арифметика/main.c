@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <conio.h>
-#include "BigInteger.h"
 #include "parser.h"
 
 int main() {
