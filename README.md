@@ -4,7 +4,7 @@ Lab #2 Методы программирования
 
 SPBSTU 2021
 
-by Petrov&Vasiliev
+by Petrov 
 
 
 g++ main.c parser.c BigInteger.c to compile
